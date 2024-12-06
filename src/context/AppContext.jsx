@@ -12,7 +12,7 @@ const AppContextProvider = (props) => {
 
   const [credit,setCredit] = useState('false')
 
-  const backendUrl = import.meta.env.VITE_BACKEND_URL
+  const [backendUrl] = useState('https://imagify-server-cyan.vercel.app');
 
   const navigate = useNavigate()
 
