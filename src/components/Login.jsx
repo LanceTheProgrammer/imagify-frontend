@@ -19,11 +19,13 @@ const Login = () => {
     try {
       const headers = { 'Content-Type': 'application/json' };
       if (state === 'Login') {
+        
+        console.log('Sending data:', { email, password });
         const { data } = await axios.post(
-          `${backendUrl}/api/user/login`,
+          backendUrl + '/api/user/login',
           { email, password },
-          { headers }
-        );
+          { headers: { 'Content-Type': 'application/json' } }
+      );
   
         if (data.success) {
           setToken(data.token);
